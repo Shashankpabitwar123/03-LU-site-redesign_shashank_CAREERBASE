@@ -1,33 +1,251 @@
-/* Base Styles */
-body {
-  color: royalblue;
-  text-align: center;
-  background-color: bisque;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* Typography */
+:root{
+  --bg:#0f1014;
+  --surface:#151821;
+  --card:#1b1f2a;
+  --border:rgba(255,255,255,.08);
+  --text:#f5f7fb;
+  --muted:#a9b0c3;
+  --accent:#67e28a;
+  --accent-2:#7bd0ff;
+}
 
-/* Links & Accents */
+html, body {
+  height: 100%;
+}
 
-/* Images */
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #223 0%, transparent 60%),
+    radial-gradient(800px 800px at 110% 10%, #1a2333 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg), #0b0c10 70%);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  line-height: 1.6;
+  text-align: left;
+}
 
-/* Hero Section */
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: .2em;
+}
 
-/* Main Content */
+a:hover {
+  text-decoration-color: var(--accent-2);
+}
 
-/* About Section */
+.accent {
+  color: var(--accent);
+}
 
-/* Specials Section */
+header {
+  background:
+    linear-gradient(135deg, rgba(103,226,138,.12), rgba(123,208,255,.10)),
+    linear-gradient(180deg, var(--surface), transparent 90%);
+  border-bottom: 1px solid var(--border);
+}
 
-/* Visit Us Section */
+.header-content {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 56px 0 40px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  letter-spacing: .4px;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(.95rem, 1.6vw, 1.05rem);
+}
+
+#hero-container {
+  width: min(1100px, 92vw);
+  margin: 28px auto 0;
+  display: grid;
+  place-items: center;
+}
+
+.hero-img {
+  width: min(680px, 95%);
+  height: auto;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.35),
+    0 0 0 8px rgba(103,226,138,.06);
+  display: block;
+}
+
+main {
+  width: min(1100px, 92vw);
+  margin: 40px auto 0;
+}
+
+section {
+  padding: 28px 0;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 14px;
+  display: inline-block;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 2px;
+}
+
+.about-us p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.specials-list {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.special-offer {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  text-align: center;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.special-offer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.35);
+  border-color: rgba(123,208,255,.25);
+}
+
+.special-offer img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  margin: 6px 0 10px;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.25));
+}
+
+.special-offer h3 {
+  margin: 6px 0 4px;
+  font-size: 1.1rem;
+}
+
+.price-now {
+  margin: 6px 0 0;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--accent);
+}
+
+.price-was {
+  margin: 2px 0 0;
+  color: var(--muted);
+  text-decoration: line-through;
+  font-size: .95rem;
+}
+
+.visit-us .contact-info {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 18px;
+  align-items: start;
+  margin: 8px 0 16px;
+}
+
+.visit-us p {
+  margin: 0;
+}
+
+.address-block address {
+  font-style: normal;
+  color: var(--muted);
+}
+
+.phone-block a {
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.phone-block a:hover {
+  text-decoration: underline;
+}
 
 iframe {
   width: 100%;
-  height: 350px;
+  height: 360px;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.35);
 }
 
-/* Footer */
 footer {
-  margin-top: 48px;
+  margin-top: 56px;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.35)), var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.footer-content {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 22px 0 26px;
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+  color: var(--muted);
+  font-size: .98rem;
+}
+
+@media (max-width: 900px) {
+  .visit-us .contact-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-content {
+    padding: 44px 0 30px;
+  }
+  .special-offer img {
+    height: 160px;
+  }
+  iframe {
+    height: 300px;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 8px;
 }
