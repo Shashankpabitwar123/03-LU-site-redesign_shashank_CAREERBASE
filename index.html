@@ -8,14 +8,34 @@
   </head>
 
   <body>
+    <a class="skip-link" href="#maincontent">Skip to content</a>
+
     <header>
+      <nav class="topnav" aria-label="Primary">
+        <a class="brand" href="index.html" aria-current="page">
+          <span class="accent">Fran's</span> Flowers
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navmenu" aria-label="Open menu">
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+        <ul id="navmenu" class="navmenu">
+          <li><a href="#about" class="navlink">About</a></li>
+          <li><a href="#specials" class="navlink">Specials</a></li>
+          <li><a href="#testimonials" class="navlink">Testimonials</a></li>
+          <li><a href="#seasonal" class="navlink">Seasonal Picks</a></li>
+          <li><a href="#visit" class="navlink">Visit Us</a></li>
+          <li><a href="about.html" class="navlink">About Fran</a></li>
+        </ul>
+      </nav>
+
       <div class="header-content">
         <h1><span class="accent">Fran's</span> Flowers</h1>
         <p class="tagline">Brightening San Francisco since 1995</p>
       </div>
     </header>
 
-    <div id="hero-container">
+    <div id="hero-container" role="img" aria-label="Francine Miller standing in her flower shop">
       <img
         src="img/fran.png"
         alt="Francine Miller, owner of Fran's Flowers"
@@ -23,8 +43,8 @@
       />
     </div>
 
-    <main>
-      <section class="about-us">
+    <main id="maincontent">
+      <section class="about-us" id="about">
         <h2><span class="accent">About</span> Us</h2>
         <p>
           Fran's Flowers was founded in 1995 by Francine Miller to share joy,
@@ -37,7 +57,7 @@
         <p>Thank you for helping us grow kindness one flower at a time.</p>
       </section>
 
-      <section class="specials">
+      <section class="specials" id="specials">
         <h2><span class="accent">Weekly</span> Specials</h2>
         <div class="specials-list">
           <article class="special-offer">
@@ -48,14 +68,14 @@
           </article>
 
           <article class="special-offer">
-            <img src="img/wild_flowers.png" alt="Wildflower Explosion" />
+            <img src="img/wild_flowers.png" alt="Wildflower Explosion bouquet" />
             <h3>Wildflower Explosion</h3>
             <p class="price-now">$19.99</p>
             <p class="price-was">Was $29.99</p>
           </article>
 
           <article class="special-offer">
-            <img src="img/sunflowers.png" alt="Sunflower Delight" />
+            <img src="img/sunflowers.png" alt="Sunflower Delight bouquet" />
             <h3>Sunflower Delight</h3>
             <p class="price-now">$12.99</p>
             <p class="price-was">Was $19.99</p>
@@ -63,7 +83,41 @@
         </div>
       </section>
 
-      <section class="visit-us">
+      <section class="testimonials" id="testimonials" aria-label="Customer testimonials">
+        <h2><span class="accent">What</span> Folks Say</h2>
+        <div class="t-grid">
+          <figure class="t-card">
+            <blockquote>
+              “I picked up a last-minute bouquet and it absolutely made my sister’s day. Beautiful arrangement and the sweetest service.”
+            </blockquote>
+            <figcaption>— Maya R., Hayes Valley</figcaption>
+          </figure>
+
+          <figure class="t-card">
+            <blockquote>
+              “Their sunflowers are sunshine in a vase. Love that a portion of sales supports local causes.”
+            </blockquote>
+            <figcaption>— Daniel K., Mission District</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="seasonal" id="seasonal" aria-labelledby="seasonal-heading">
+        <h2 id="seasonal-heading"><span class="accent">Seasonal</span> Picks</h2>
+        <article class="seasonal-card">
+          <div class="seasonal-media">
+            <img src="img/sunflowers.png" alt="Seasonal sunflower bouquet" />
+            <span class="badge">Only here ’til October</span>
+          </div>
+          <div class="seasonal-content">
+            <h3>Golden Sunflower Bundle</h3>
+            <p>Bright stems, fresh greens, and a hint of wildflower filler. Best for birthdays and kitchen-table cheer.</p>
+            <a class="button" href="#visit">Reserve for Pickup</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="visit-us" id="visit">
         <h2><span class="accent">Visit</span> Us</h2>
         <div class="contact-info">
           <p>Come in and say hi!</p>
@@ -75,6 +129,7 @@
           </div>
         </div>
         <iframe
+          title="Map of Fran’s Flowers in San Francisco"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.144965296929!2d-122.4230293!3d37.7689366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e3a37128e21%3A0xf85bfc7fef295b98!2s123%20Valencia%20St%2C%20San%20Francisco%2C%20CA%2094103!5e0!3m2!1sen!2sus!4v1722345678901!5m2!1sen!2sus"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
@@ -84,9 +139,49 @@
 
     <footer>
       <div class="footer-content">
-        <p>&copy; 2025 Fran's Flowers LLC.</p>
-        <p>Brightening lives one flower at a time</p>
+        <nav class="footnav" aria-label="Footer">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#specials">Specials</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#seasonal">Seasonal Picks</a></li>
+            <li><a href="#visit">Visit Us</a></li>
+            <li><a href="about.html">About Fran</a></li>
+          </ul>
+        </nav>
+        <div class="social">
+          <a href="#" aria-label="Follow on Instagram" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM18 6.2a1 1 0 1 1-2.001.001A1 1 0 0 1 18 6.2z"/></svg>
+          </a>
+          <a href="#" aria-label="Follow on Facebook" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3h4a1 1 0 0 1 1 1v3h-4a2 2 0 0 0-2 2v3h5l-1 4h-4v7h-4v-7H6v-4h3V9a6 6 0 0 1 6-6z"/></svg>
+          </a>
+          <a href="#" aria-label="Follow on X (Twitter)" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4.7l4 5.3L17.6 4H20l-6.2 7.9L20 20h-4.7l-4.2-5.6L6.4 20H4l6.4-8.2z"/></svg>
+          </a>
+        </div>
+        <p>&copy; 2025 Fran's Flowers LLC. Brightening lives one flower at a time.</p>
       </div>
     </footer>
+
+    <script>
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.getElementById('navmenu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!open));
+          menu.classList.toggle('open');
+          toggle.setAttribute('aria-label', !open ? 'Close menu' : 'Open menu');
+        });
+        menu.addEventListener('click', (e) => {
+          if(e.target.matches('.navlink')){
+            toggle.setAttribute('aria-expanded','false');
+            menu.classList.remove('open');
+          }
+        });
+      }
+      document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
   </body>
 </html>
