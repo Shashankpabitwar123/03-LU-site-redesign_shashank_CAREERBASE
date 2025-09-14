@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Fran | Fran's Flowers</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#maincontent">Skip to content</a>
+
+    <header>
+      <nav class="topnav" aria-label="Primary">
+        <a class="brand" href="index.html">
+          <span class="accent">Fran's</span> Flowers
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navmenu" aria-label="Open menu">
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+        <ul id="navmenu" class="navmenu">
+          <li><a href="index.html#about" class="navlink">About</a></li>
+          <li><a href="index.html#specials" class="navlink">Specials</a></li>
+          <li><a href="index.html#testimonials" class="navlink">Testimonials</a></li>
+          <li><a href="index.html#seasonal" class="navlink">Seasonal Picks</a></li>
+          <li><a href="index.html#visit" class="navlink">Visit Us</a></li>
+          <li><a href="about.html" class="navlink" aria-current="page">About Fran</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-content">
+        <h1><span class="accent">About</span> Fran</h1>
+        <p class="tagline">A life rooted in flowers and community</p>
+      </div>
+    </header>
+
+    <main id="maincontent">
+      <section class="about-fran">
+        <div class="about-fran-grid">
+          <div class="about-fran-media">
+            <img src="img/fran.png" alt="Francine Miller arranging flowers in the shop" class="hero-img" />
+          </div>
+          <div class="about-fran-text">
+            <h2>Meet Francine Miller</h2>
+            <p>Raised on weekend trips to the Ferry Plaza Farmers Market, Fran learned early that flowers connect people. In 1995 she opened Fran’s Flowers on Valencia Street with a simple promise: make it easy to share care and joy, every day.</p>
+            <p>Today she mentors local apprentices, sources from Bay Area growers whenever possible, and dedicates a portion of every purchase to organizations addressing homelessness. If you catch her humming in the shop, she’s probably designing a sunflower bundle for someone’s birthday.</p>
+            <a class="button" href="index.html#visit">Plan a Visit</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <nav class="footnav" aria-label="Footer">
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#specials">Specials</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="index.html#seasonal">Seasonal Picks</a></li>
+            <li><a href="index.html#visit">Visit Us</a></li>
+            <li><a href="about.html" aria-current="page">About Fran</a></li>
+          </ul>
+        </nav>
+        <div class="social">
+          <a href="#" aria-label="Follow on Instagram" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM18 6.2a1 1 0 1 1-2.001.001A1 1 0 0 1 18 6.2z"/></svg>
+          </a>
+          <a href="#" aria-label="Follow on Facebook" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3h4a1 1 0 0 1 1 1v3h-4a2 2 0 0 0-2 2v3h5l-1 4h-4v7h-4v-7H6v-4h3V9a6 6 0 0 1 6-6z"/></svg>
+          </a>
+          <a href="#" aria-label="Follow on X (Twitter)" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4.7l4 5.3L17.6 4H20l-6.2 7.9L20 20h-4.7l-4.2-5.6L6.4 20H4l6.4-8.2z"/></svg>
+          </a>
+        </div>
+        <p>&copy; 2025 Fran's Flowers LLC. Brightening lives one flower at a time.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.getElementById('navmenu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!open));
+          menu.classList.toggle('open');
+          toggle.setAttribute('aria-label', !open ? 'Close menu' : 'Open menu');
+        });
+        menu.addEventListener('click', (e) => {
+          if(e.target.matches('.navlink')){
+            toggle.setAttribute('aria-expanded','false');
+            menu.classList.remove('open');
+          }
+        });
+      }
+      document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+  </body>
+</html>
